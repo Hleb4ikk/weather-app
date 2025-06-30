@@ -30,6 +30,7 @@ export default function AdminPage() {
     setStatus(message ? { isError: true, message } : null);
 
     if (text) {
+      setPending(true);
       try {
         const response = await uploadMeme(text, selectedCategory);
         switch (response.code) {
