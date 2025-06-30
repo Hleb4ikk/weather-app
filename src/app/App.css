@@ -3,23 +3,28 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
-
-main {
+.App {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  height: 100vh;
 }
-
-.typeCityInput {
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  box-sizing: content-box;
+}
+.formInput {
   height: 25px;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -27,193 +32,7 @@ main {
   font-size: 16px;
 }
 
-.typeCityForm {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.submitButtonContainer {
-  display: flex;
-  justify-content: center;
-}
-
-.submitButton {
-  cursor: pointer;
-  border-radius: 8px;
-  background-color: gray;
-  border: 1px solid gray;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  transition: background-color 0.1s ease-in-out;
-}
-
-.submitButton:hover {
-  background-color: white;
-  color: gray;
-}
-
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.weatherItem {
-  box-sizing: border-box;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.cityName {
-  word-break: break-all;
-}
-.rowItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.columnItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-  aspect-ratio: 1/1;
-}
-.columnItem span {
-  font-size: 35px;
-}
-.columnItem p {
-  font-size: 14px;
-  word-break: break-all;
-}
-.temperatureContainer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.currentTemperature {
-  font-size: 35px;
-}
-
-.minMaxTempContainer {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-}
-.weather {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 340px;
-}
-.twoWeatherItems {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-.wheatherItemHeader {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px;
-}
-.windContainer {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.mainWindParamsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex-grow: 1;
-}
-.windParam {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.windCompass {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  border-radius: 50%;
-  margin-left: 20px;
-  background-color: #f9f9f9;
-  box-shadow: inset 0 0 5px #aaa;
-}
-
-.arrow {
-  width: 2px;
-  height: 40%;
-  background-color: red;
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform-origin: bottom center;
-  transition: transform 0.5s ease;
-}
-
-.compassLabels {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.label {
-  position: absolute;
-  font-size: 12px;
-  font-weight: bold;
-  color: #333;
-}
-
-.north {
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.east {
-  top: 50%;
-  right: 5px;
-  transform: translateY(-50%);
-}
-
-.south {
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.west {
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-}
-
-.compassTicks {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: rotate(0deg);
-}
-
-.tick {
-  position: absolute;
-  top: 90%;
-  left: 49%;
-  width: 2px;
-  height: 10px;
-  background-color: #aaa;
-  transform-origin: center -40px; /* -40px вверх = 40px наружу от центра */
-}
-
-.inputMessage {
-  color: red;
+textarea,
+::placeholder {
+  font-family: "Roboto", sans-serif;
 }

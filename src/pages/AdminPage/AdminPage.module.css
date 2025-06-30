@@ -1,0 +1,79 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.submitForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submitButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: gray;
+  border: 1px solid gray;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.submitButton:hover {
+  background-color: white;
+  color: gray;
+}
+
+.pendingSubmitButton {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.pendingSubmitButton:hover {
+  cursor: not-allowed;
+  background-color: gray;
+  color: white;
+}
+
+.jokeArea {
+  width: 250px;
+  height: 100px;
+  resize: none;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 16px;
+}
+.selectCategory {
+  width: 250px;
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.errorMessage {
+  color: red;
+}
+
+.loader {
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

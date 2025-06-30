@@ -22,6 +22,7 @@ type Forecast = {
   generalData: DescriptiveData;
   weather: Weather;
   wind: Wind;
+  joke: string;
 };
 
 export type { DescriptiveData, Weather, Wind, Forecast };
