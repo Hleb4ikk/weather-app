@@ -1,8 +1,8 @@
-import "./App.css";
+import './App.css';
 
-import { BrowserRouter, Routes, Route } from "react-router";
-import ForecastPage from "../pages/ForecastPage/ForecastPage";
-import AdminPage from "../pages/AdminPage/AdminPage";
+import { BrowserRouter, Routes, Route } from 'react-router';
+import ForecastPage from '../pages/ForecastPage/ForecastPage';
+import AdminPage from '../pages/AdminPage/AdminPage';
 
 function App() {
   return (
@@ -10,8 +10,14 @@ function App() {
       <main>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<ForecastPage />} />
-            <Route path="/admin" element={<AdminPage />} />
+            <Route
+              path="/"
+              element={<ForecastPage />}
+            />
+            <Route
+              path="/admin"
+              element={<AdminPage />}
+            />
           </Routes>
         </BrowserRouter>
       </main>

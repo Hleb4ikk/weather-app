@@ -1,13 +1,13 @@
-import styles from "./ForecastPage.module.css";
+import styles from './ForecastPage.module.css';
 
-import { Droplet, Wind as WindIcon, Link } from "lucide-react";
-import { Thermometer } from "../../shared/components/Thermometer/Thermometer";
-import { Forecast } from "@/entities/forecast";
-import { useRef, useState, useEffect } from "react";
-import { fetchForecastByCity } from "../../api/weatherApi";
-import { ApiResponse } from "@/entities/apiResponse";
-import { useNavigate, useSearchParams } from "react-router";
-import { validateInput } from "../../shared/validation";
+import { Droplet, Wind as WindIcon, Link } from 'lucide-react';
+import { Thermometer } from '../../shared/components/Thermometer/Thermometer';
+import { Forecast } from '@/entities/forecast';
+import { useRef, useState, useEffect } from 'react';
+import { fetchForecastByCity } from '../../api/weatherApi';
+import { ApiResponse } from '@/entities/apiResponse';
+import { useNavigate, useSearchParams } from 'react-router';
+import { validateInput } from '../../shared/validation';
 
 export default function ForecastPage() {
   const cityInputRef = useRef<HTMLInputElement>(null);
@@ -18,7 +18,7 @@ export default function ForecastPage() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const city = searchParams[0].get("city");
+    const city = searchParams[0].get('city');
     if (city && cityInputRef.current) {
       cityInputRef.current.value = city;
     }
@@ -43,12 +43,12 @@ export default function ForecastPage() {
 
         if (response.code === 200) {
           setForecast(response.data);
-          searchParams.set("city", response.data?.city ?? "");
+          searchParams.set('city', response.data?.city ?? '');
         } else {
           setErrorMessage(response.message);
         }
       } catch (error) {
-        setErrorMessage("Ошибка при запросе данных");
+        setErrorMessage('Ошибка при запросе данных');
       }
       navigate(`?${searchParams.toString()}`);
     }
@@ -72,8 +72,7 @@ export default function ForecastPage() {
 
             <div className={styles.weatherContent}>
               <h3 className={styles.weatherDescription}>
-                {forecast.generalData.description[0].toUpperCase() +
-                  forecast.generalData.description.slice(1)}
+                {forecast.generalData.description[0].toUpperCase() + forecast.generalData.description.slice(1)}
               </h3>
 
               <div className={styles.jokeContainer}>
@@ -91,9 +90,7 @@ export default function ForecastPage() {
           <article className={`${styles.weatherItem} ${styles.rowItem}`}>
             <h2 className={styles.cityName}>{forecast.city}</h2>
             <div className={styles.temperatureContainer}>
-              <span className={styles.currentTemperature}>
-                {Math.floor(forecast.weather.temp)}°C
-              </span>
+              <span className={styles.currentTemperature}>{Math.floor(forecast.weather.temp)}°C</span>
               <div className={styles.minMaxTempContainer}>
                 <span>Мин. {forecast.weather.temp_min}°C</span>
                 <span>Макс. {forecast.weather.temp_max}°C</span>
@@ -103,7 +100,10 @@ export default function ForecastPage() {
           <div className={styles.twoWeatherItems}>
             <article className={`${styles.weatherItem} ${styles.columnItem}`}>
               <h2 className={styles.wheatherItemHeader}>
-                <Thermometer temp={forecast.weather.feels_like} size={20} />
+                <Thermometer
+                  temp={forecast.weather.feels_like}
+                  size={20}
+                />
                 ОЩУЩАЕТСЯ КАК
               </h2>
               <span>{Math.floor(forecast.weather.feels_like)}°C</span>
@@ -176,12 +176,13 @@ export default function ForecastPage() {
             type="text"
             placeholder="Введите город"
           />
-          {errorMessage && (
-            <p className={styles.inputMessage}>{errorMessage}</p>
-          )}
+          {errorMessage && <p className={styles.inputMessage}>{errorMessage}</p>}
           <div className={styles.buttonsContainer}>
             <div className={styles.submitButtonContainer}>
-              <button className={styles.submitButton} type="submit">
+              <button
+                className={styles.submitButton}
+                type="submit"
+              >
                 Узнать погоду
               </button>
             </div>
