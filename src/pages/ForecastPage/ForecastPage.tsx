@@ -168,7 +168,7 @@ export default function ForecastPage() {
       )}
       <section className={styles.formContainer}>
         <h1>@the-wheather-app</h1>
-        <p>Погода - мем exchange</p>
+        <p>Погода - шутка exchange</p>
         <form
           onSubmit={handleSubmit}
           id="cityForm"
