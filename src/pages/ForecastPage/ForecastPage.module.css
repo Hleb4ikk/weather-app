@@ -421,25 +421,3 @@
     transform: scale(1);
   }
 }
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .generalData {
-    padding: 24px;
-    border-radius: 20px;
-  }
-
-  .weatherDescription {
-    font-size: 20px;
-  }
-
-  .weatherJoke {
-    font-size: 14px;
-  }
-
-  .jokeContainer {
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px 16px;
-  }
-}

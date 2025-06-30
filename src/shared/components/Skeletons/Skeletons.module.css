@@ -426,38 +426,3 @@
     transform: scale(1);
   }
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .skeletonContainer {
-    padding: 16px;
-  }
-
-  .generalDataSkeleton {
-    padding: 24px;
-    border-radius: 20px;
-  }
-
-  .twoWeatherItemsSkeleton {
-    grid-template-columns: 1fr;
-  }
-
-  .windContainerSkeleton {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .windCompassSkeleton {
-    margin-left: 0;
-  }
-
-  .temperatureBlockSkeleton {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-
-  .temperatureContainerSkeleton {
-    align-items: center;
-  }
-}
