@@ -1,5 +1,4 @@
 import { ApiResponse } from '@/entities/apiResponse';
-import { Forecast } from '@/entities/forecast';
 
 export async function uploadMeme(joke: string, category: string) {
   const response = await fetch('http://localhost:8080/memes', {

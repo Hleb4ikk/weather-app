@@ -1,0 +1,463 @@
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* Base skeleton styles */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Weather Section Skeleton */
+.weatherSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* General Data Skeleton */
+.generalDataSkeleton {
+  position: relative;
+  background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+  border-radius: 24px;
+  padding: 32px;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.weatherIconSkeleton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.iconPlaceholder {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(90deg, #d0d0d0 25%, #c0c0c0 50%, #d0d0d0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.iconGlowSkeleton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(200, 200, 200, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.weatherContentSkeleton {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.descriptionSkeleton {
+  height: 32px;
+  width: 60%;
+  margin: 0 auto 20px auto;
+  background: linear-gradient(90deg, #d0d0d0 25%, #c0c0c0 50%, #d0d0d0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+.jokeContainerSkeleton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(200, 200, 200, 0.3);
+  border-radius: 16px;
+  padding: 16px 20px;
+  border: 1px solid rgba(180, 180, 180, 0.2);
+}
+
+.jokeIconSkeleton {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(90deg, #d0d0d0 25%, #c0c0c0 50%, #d0d0d0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 50%;
+}
+
+.jokeTextSkeleton {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.jokeLine {
+  height: 16px;
+  background: linear-gradient(90deg, #d0d0d0 25%, #c0c0c0 50%, #d0d0d0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.jokeLine:first-child {
+  width: 100%;
+}
+
+.jokeLine:last-child {
+  width: 70%;
+}
+
+.decorativeElementsSkeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkleSkeleton {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(180, 180, 180, 0.6);
+  border-radius: 50%;
+  animation: sparkle 3s linear infinite;
+}
+
+.sparkleSkeleton:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.sparkleSkeleton:nth-child(2) {
+  top: 60%;
+  right: 20%;
+  animation-delay: 1s;
+}
+
+.sparkleSkeleton:nth-child(3) {
+  bottom: 30%;
+  left: 25%;
+  animation-delay: 2s;
+}
+
+/* Temperature Block Skeleton */
+.temperatureBlockSkeleton {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e0e0e0;
+}
+
+.cityNameSkeleton {
+  height: 32px;
+  width: 150px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+.temperatureContainerSkeleton {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.currentTempSkeleton {
+  height: 48px;
+  width: 60px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+.minMaxTempSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.minTempSkeleton,
+.maxTempSkeleton {
+  height: 20px;
+  width: 80px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Two Weather Items Skeleton */
+.twoWeatherItemsSkeleton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.weatherItemSkeleton {
+  aspect-ratio: 1/1;
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.weatherItemHeaderSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconSkeleton {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.headerTextSkeleton {
+  height: 16px;
+  width: 60px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.weatherValueSkeleton {
+  height: 32px;
+  width: 80px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+.weatherDescSkeleton {
+  height: 16px;
+  width: 90%;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Wind Block Skeleton */
+.windBlockSkeleton {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.windContainerSkeleton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.windParamsSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.windParamSkeleton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.windLabelSkeleton {
+  height: 16px;
+  width: 60px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.windValueSkeleton {
+  height: 16px;
+  width: 50px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.windDividerSkeleton {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 8px 0;
+}
+
+.windCompassSkeleton {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-left: 20px;
+}
+
+.compassCircleSkeleton {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.compassTicksSkeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tickSkeleton {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 2px;
+  height: 12px;
+  background: #d0d0d0;
+  transform-origin: 50% 58px;
+}
+
+.tickSkeleton:nth-child(1) {
+  transform: translateX(-50%) rotate(0deg);
+}
+.tickSkeleton:nth-child(2) {
+  transform: translateX(-50%) rotate(30deg);
+}
+.tickSkeleton:nth-child(3) {
+  transform: translateX(-50%) rotate(60deg);
+}
+.tickSkeleton:nth-child(4) {
+  transform: translateX(-50%) rotate(90deg);
+}
+.tickSkeleton:nth-child(5) {
+  transform: translateX(-50%) rotate(120deg);
+}
+.tickSkeleton:nth-child(6) {
+  transform: translateX(-50%) rotate(150deg);
+}
+.tickSkeleton:nth-child(7) {
+  transform: translateX(-50%) rotate(180deg);
+}
+.tickSkeleton:nth-child(8) {
+  transform: translateX(-50%) rotate(210deg);
+}
+.tickSkeleton:nth-child(9) {
+  transform: translateX(-50%) rotate(240deg);
+}
+.tickSkeleton:nth-child(10) {
+  transform: translateX(-50%) rotate(270deg);
+}
+.tickSkeleton:nth-child(11) {
+  transform: translateX(-50%) rotate(300deg);
+}
+.tickSkeleton:nth-child(12) {
+  transform: translateX(-50%) rotate(330deg);
+}
+
+/* Animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skeletonContainer {
+    padding: 16px;
+  }
+
+  .generalDataSkeleton {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .twoWeatherItemsSkeleton {
+    grid-template-columns: 1fr;
+  }
+
+  .windContainerSkeleton {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .windCompassSkeleton {
+    margin-left: 0;
+  }
+
+  .temperatureBlockSkeleton {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .temperatureContainerSkeleton {
+    align-items: center;
+  }
+}

@@ -5,7 +5,7 @@ import { Thermometer } from '../../shared/components/Thermometer/Thermometer';
 import { Forecast } from '@/entities/forecast';
 import { useRef, useState, useEffect } from 'react';
 import { fetchForecastByCity } from '../../api/weatherApi';
-import { ApiResponse } from '@/entities/apiResponse';
+import Skeletons from '../../shared/components/Skeletons/Skeletons';
 import { useNavigate, useSearchParams } from 'react-router';
 import { validateInput } from '../../shared/validation';
 
@@ -13,6 +13,7 @@ export default function ForecastPage() {
   const cityInputRef = useRef<HTMLInputElement>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [forecast, setForecast] = useState<Forecast | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
   const searchParams = useSearchParams();
@@ -35,8 +36,10 @@ export default function ForecastPage() {
     setErrorMessage(cityInputMessage);
 
     if (city) {
-      const searchParams = new URLSearchParams();
+      setIsLoading(true);
+
       try {
+        const searchParams = new URLSearchParams();
         const response = await fetchForecastByCity(city);
 
         console.log(response);
@@ -47,16 +50,18 @@ export default function ForecastPage() {
         } else {
           setErrorMessage(response.message);
         }
+        navigate(`?${searchParams.toString()}`);
       } catch (error) {
         setErrorMessage('Ошибка при запросе данных');
       }
-      navigate(`?${searchParams.toString()}`);
+      setIsLoading(false);
     }
   }
 
   return (
     <div className={styles.forecastPageContainer}>
-      {forecast && (
+      {isLoading && <Skeletons />}
+      {forecast && !isLoading && (
         <section className={styles.weather}>
           <article className={styles.generalData}>
             <div className={styles.weatherIconContainer}>
